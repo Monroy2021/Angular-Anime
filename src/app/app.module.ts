@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 //Modulos 
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 //Componentes
@@ -20,7 +21,8 @@ import { SelectedAnimeComponent } from './components/selected-anime/selected-ani
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

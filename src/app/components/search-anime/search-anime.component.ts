@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimeService } from 'src/app/services/anime.service';
 
 @Component({
   selector: 'app-search-anime',
@@ -6,14 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-anime.component.css']
 })
 export class SearchAnimeComponent implements OnInit {
+  searchTerm: string = '';
 
-  constructor() { }
+  constructor(private animeService: AnimeService) { }
 
   ngOnInit(): void {
   }
 
-  search(searchTerm: string) {
-    console.log(searchTerm)
+  search() {
+    this.animeService.getAnimes(this.searchTerm).subscribe(result => {
+      this.animeService.addResultAnime(result.data);
+      this.searchTerm = '';
+    })
   }
 
 }
+
+
+
