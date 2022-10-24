@@ -37,7 +37,6 @@ export class ResultAnimeComponent implements OnInit, OnDestroy {
       watched_episodes: 0
     }
     this.animeService.animeSelected(addAnime);
-
     this.anime_results = [];
 
   }
